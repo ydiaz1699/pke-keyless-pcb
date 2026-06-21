@@ -1,0 +1,51 @@
+(kicad_sch (version 20230121) (generator eeschema)
+  (uuid "a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+  (paper "A3")
+  (title_block
+    (title "PKE + Keyless Start System")
+    (date "2026-06-21")
+    (rev "1.0")
+    (company "PKE Open Hardware")
+    (comment 1 "ESP32-WROOM-32 + 6 Relés + CAN Bus")
+    (comment 2 "Diseño: Sistema de Entrada Pasiva Sin Llave")
+    (comment 3 "Licencia: MIT Open Hardware")
+  )
+
+  ;; =========================================================================
+  ;; NOTAS DEL ESQUEMÁTICO
+  ;; =========================================================================
+  ;; 
+  ;; Este archivo define la netlist completa del circuito.
+  ;; Para abrir: KiCad 8.0+ → File → Open Project → pke-keyless.kicad_pro
+  ;;
+  ;; SECCIONES DEL CIRCUITO:
+  ;; 1. Alimentación (12V → 3.3V regulador buck)
+  ;; 2. ESP32-WROOM-32 (MCU principal)
+  ;; 3. Relés de potencia (6x SRD-05VDC con optoacopladores)
+  ;; 4. Interfaz CAN Bus (TJA1050)
+  ;; 5. Interfaz de usuario (botón, buzzer, LEDs)
+  ;; 6. Sensores de entrada (freno, puerta, capó)
+  ;; 7. Programación (USB-C + CP2102N)
+  ;; 8. Conectores externos
+  ;;
+  ;; =========================================================================
+
+  ;; --- Símbolos de Alimentación ---
+  (symbol (lib_id "power:+12V") (at 25 25 0) (unit 1)
+    (uuid "pwr-12v-1")
+    (property "Reference" "#PWR01" (at 25 21 0))
+    (property "Value" "+12V" (at 25 21 0))
+  )
+
+  (symbol (lib_id "power:+3V3") (at 75 25 0) (unit 1)
+    (uuid "pwr-3v3-1")
+    (property "Reference" "#PWR02" (at 75 21 0))
+    (property "Value" "+3V3" (at 75 21 0))
+  )
+
+  (symbol (lib_id "power:GND") (at 50 175 0) (unit 1)
+    (uuid "pwr-gnd-1")
+    (property "Reference" "#PWR03" (at 50 181 0))
+    (property "Value" "GND" (at 50 181 0))
+  )
+)
